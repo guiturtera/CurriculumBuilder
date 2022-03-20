@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\jquery-smartwizard-master\jquery-smartwizard-master\.github\FUNDING.yml" />
+    <None Include="wwwroot\lib\jquery-smartwizard-master\jquery-smartwizard-master\.github\ISSUE_TEMPLATE\bug_report.md" />
+    <None Include="wwwroot\lib\jquery-smartwizard-master\jquery-smartwizard-master\.github\ISSUE_TEMPLATE\feature_request.md" />
+    <None Include="wwwroot\lib\jquery-smartwizard-master\jquery-smartwizard-master\.github\pull_request_template.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.14" />
+  </ItemGroup>
+
+</Project>

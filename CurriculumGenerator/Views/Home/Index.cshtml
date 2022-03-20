@@ -1,0 +1,233 @@
+﻿@model CurriculoViewModel 
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<link href="~/lib/jquery-smartwizard-master/jquery-smartwizard-master/dist/css/smart_wizard_all.min.css" rel="stylesheet" type="text/css" />
+
+<!-- SmartWizard html -->
+<div id="smartwizard">
+
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#step-1">
+                <strong>Passo 1</strong> <br>Informações Pesssoais
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#step-2">
+                <strong>Passo 2</strong> <br>Experiência Profissional
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#step-3">
+                <strong>Passo 3</strong> <br>Experiência acadêmica
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="#step-4">
+                <strong>Passso 4</strong> <br> Idiomas
+            </a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
+            <h3>Informaçõe Pessoais</h3>
+            <form class="g-3 needs-validation" id="client-form" novalidate>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Nome</label>
+                        <input type="text" value="@Model.Nome" name="Nome" class="form-control" placeholder="Guilherme Turtera" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Email</label>
+                        <input type="email" value="@Model.Email" name="Email" class="form-control" placeholder="guilhermeturtera@outlook.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Endereço</label>
+                    <input type="text" value="@Model.Endereco" name="Endereco" class="form-control" placeholder="Rua dos Bobos, nº 0">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Telefone</label>
+                        <input type="tel" value="@Model.Telefone" name="Telefone" class="form-control" placeholder="(11) 98741-0155">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>CPF (sem . e -)</label>
+                        <input type="text" value="@Model.CPF" name="CPF" class="form-control" placeholder="12345678900" required><!-- maxlength="11" minlength="11"-->
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Pretensão Salarial (R$)</label>
+                        <input type="number" value="@Model.PretensaoSalarial" name="PretensaoSalarial" class="form-control" placeholder="2000.00">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Cargo Pretendido</label>
+                        <input type="text" value="@Model.CargoPretendido" name="CargoPretendido" class="form-control" placeholder="Administrador de Contas">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
+            <h3>Experiência Profissional</h3>
+            <form class="g-3 needs-validation" id="professional-experience-form" novalidate>
+                @for (int i = 0; i < Model.ExperienciasProfissionais.Count; i++)
+                {
+                    <h4>Cargo @(i + 1)</h4>
+
+                    <div class="form-group">
+                        <label>Cargo</label>
+                        <input type="text" class="form-control" placeholder="Analista Júnior" name="Cargo" value="@(Model.ExperienciasProfissionais[i].Cargo)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea class="form-control" placeholder="Aprendi como se escreve um código limpo..." name="Descricao" required>@(Model.ExperienciasProfissionais[i].Descricao)</textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Data de Início</label>
+                            <input type="datetime" class="form-control" value="@(Model.ExperienciasProfissionais[i].DataInicio)" name="DataInicio" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Data de Término</label>
+                            <input type="datetime" class="form-control" value="@(Model.ExperienciasProfissionais[i].DataFinal)" name="DataFinal" placeholder="Administrador de Contas">
+                        </div>
+                    </div>
+                    <br>
+                }
+            </form>
+        </div>
+        <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
+            <h3>Experiência Acadêmica</h3>
+            <form class="g-3 needs-validation" id="academic-experience-form" novalidate>
+                @for (int i = 0; i < Model.ExperienciasAcademicas.Count; i++)
+                {
+                    <h4>Curso @(i + 1)</h4>
+                    <div class="form-group">
+                        <label>Curso</label>
+                        <input type="text" value="@(Model.ExperienciasAcademicas[i].Curso)" name="Curso" class="form-control" placeholder="Desenvolvimento Front End" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea class="form-control" name="Descricao" placeholder="Aprendi como se escreve um código limpo..." required>@(Model.ExperienciasAcademicas[i].Descricao)</textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Data de Início</label>
+                            <input type="datetime" value="@(Model.ExperienciasAcademicas[i].DataInicio)" class="form-control" name="DataInicio" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Data de Término</label>
+                            <input type="datetime" value="@(Model.ExperienciasAcademicas[i].DataFinal)" class="form-control" name="DataFinal" placeholder="Administrador de Contas">
+                        </div>
+                    </div>
+                }
+            </form>
+        </div>
+        <div id="step-4" class="tab-pane" role="tabpanel" aria-labelledby="step-4">
+            <h3>Idiomas</h3>
+            <form class="g-3 needs-validation" id="language-experience" novalidate>
+                @foreach (IdiomaViewModel idioma in Model.Idiomas)
+                {
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Idioma</label>
+                            <input type="text" class="form-control" name="Idioma" placeholder="Inglês" value="@(idioma.Idioma)" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Nível</label>
+                            <input type="text" class="form-control" name="Level" placeholder="Avançado" value="@(idioma.Level)" required>
+                        </div>
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
+</div>
+
+<br /> &nbsp;
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="~/lib/jquery-smartwizard-master/jquery-smartwizard-master/dist/js/jquery.smartWizard.min.js"></script>
+
+<script type="text/javascript">
+    var errorSteps = []
+    $(document).ready(function () {
+        // Smart Wizard
+        $('#smartwizard').smartWizard({
+            selected: 0,
+            theme: 'arrows',
+            transition: {
+                animation: 'slide-horizontal',
+            },
+            lang: {
+                next: 'Próximo',
+                previous: 'Anterior'
+            },
+            errorSteps,
+            anchorSettings: {
+                markAllPreviousStepsAsDone: false
+            }
+        });
+    });
+
+    $("#smartwizard").on("leaveStep", function (e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
+        let validForm = validateForm(currentStepIndex)
+
+        //setValidWizzard(validForm, currentStepIndex)
+        return validForm;
+    });
+
+    function validateForm(stepIndex) {
+        switch (stepIndex) {
+            case 0:
+                return validateFormById('client-form');
+            case 1:
+                return validateFormById('professional-experience-form');
+            case 2:
+                return validateFormById('academic-experience-form');
+            case 3:
+                return validateFormById('language-experience');
+        }
+    }
+
+    function validateFormById(formId) {
+        let form = $("#" + formId);
+        let valid = form[0].checkValidity()
+        if (!valid)
+            $('<input type="submit">').hide().appendTo(form).click().remove();
+
+        return valid;
+    }
+
+    // Desabilita o submit se a validação não for válida
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+
+
