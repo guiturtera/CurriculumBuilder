@@ -22,6 +22,14 @@ namespace CurriculumGenerator.Controllers
         {
             return View(new CurriculoViewModel()
             {
+                CargoPretendido = "Analista",
+                CPF = "123",
+                Email = "abc@gotanmail.com",
+                Endereco = "av abc",
+                Nome = "Gui",
+                PretensaoSalarial = 20000,
+                Telefone = "200",
+
                 Idiomas = new List<IdiomaViewModel>()
                 {
                     new IdiomaViewModel { Idioma = "Inglês", Level = "Avançado" },
@@ -31,16 +39,16 @@ namespace CurriculumGenerator.Controllers
                 ExperienciasProfissionais = new List<ExperienciasProfissionaisViewModel>()
                 {
                     new ExperienciasProfissionaisViewModel { Cargo = "Analista Júnior", Descricao = "Analista júnior", DataInicio = DateTime.Now, DataFinal = DateTime.MaxValue },
-                    new ExperienciasProfissionaisViewModel { Cargo = "", Descricao = "" },
-                    new ExperienciasProfissionaisViewModel { Cargo = "", Descricao = "" },
+                    new ExperienciasProfissionaisViewModel { Cargo = "Analista Júnior 2", Descricao = "Analista pleno", DataInicio = DateTime.Now, DataFinal = DateTime.MaxValue },
+                    //new ExperienciasProfissionaisViewModel { Cargo = "", Descricao = "" },
                 },
                 ExperienciasAcademicas = new List<ExperienciasAcademicasViewModel>()
                 {
                     new ExperienciasAcademicasViewModel { Curso = "Desenvolvimento front end", Descricao = "Desenvolvimento front end", DataInicio = DateTime.Now, DataFinal = DateTime.MaxValue },
-                    new ExperienciasAcademicasViewModel { Curso = "", Descricao = ""},
-                    new ExperienciasAcademicasViewModel { Curso = "", Descricao = ""},
-                    new ExperienciasAcademicasViewModel { Curso = "", Descricao = ""},
-                    new ExperienciasAcademicasViewModel { Curso = "", Descricao = ""},
+                    new ExperienciasAcademicasViewModel { Curso = "Desenvolvimento back end", Descricao = "Desenvolvimento back end", DataInicio = DateTime.Now, DataFinal = DateTime.MaxValue },
+                    //new ExperienciasAcademicasViewModel { Curso = "", Descricao = ""},
+                    //new ExperienciasAcademicasViewModel { Curso = "", Descricao = ""},
+                    //new ExperienciasAcademicasViewModel { Curso = "", Descricao = ""},
                 }
             });
         }
@@ -49,6 +57,13 @@ namespace CurriculumGenerator.Controllers
         {
             return View();
         }
+
+
+        public IActionResult InsereNovoCurriculo(CurriculoViewModel curriculo)
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
