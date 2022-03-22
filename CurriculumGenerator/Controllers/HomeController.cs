@@ -1,4 +1,5 @@
-﻿using CurriculumGenerator.Models;
+﻿using CurriculumGenerator.DAO;
+using CurriculumGenerator.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -22,14 +23,16 @@ namespace CurriculumGenerator.Controllers
         {
             return View(new CurriculoViewModel()
             {
-                CargoPretendido = "Analista",
-                CPF = "123",
-                Email = "abc@gotanmail.com",
-                Endereco = "av abc",
-                Nome = "Gui",
-                PretensaoSalarial = 20000,
-                Telefone = "200",
-
+                Pessoa = new PessoaViewModel()
+                {
+                    CargoPretendido = "Analista",
+                    CPF = "123",
+                    Email = "abc@gotanmail.com",
+                    Endereco = "av abc",
+                    Nome = "Gui",
+                    PretensaoSalarial = 20000,
+                    Telefone = "200",
+                },
                 Idiomas = new List<IdiomaViewModel>()
                 {
                     new IdiomaViewModel { Idioma = "Inglês", Level = "Avançado" },
@@ -61,6 +64,9 @@ namespace CurriculumGenerator.Controllers
 
         public IActionResult InsereNovoCurriculo(CurriculoViewModel curriculo)
         {
+            CurriculoDAO curriculoDAO = new CurriculoDAO();
+            curriculoDAO.InsereOuAtualiza(curriculo);
+
             return View();
         }
 

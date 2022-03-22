@@ -7,6 +7,7 @@ namespace CurriculumGenerator.Models
 {
     public class ExperienciasAcademicasViewModel
     {
+        public int Id { get; set; }
         public string Curso { get; set; }
         public string Descricao { get; set; }
         public DateTime DataInicio { get; set; }

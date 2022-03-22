@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wVcBxSyTRhlfmnMFt635x8ciB36oTaFJYN7ieW2yaKcoRuyZ0c7Xq/xn0p3qwH97l+fj0YBP5WTXRQKh933c0g==",
+  "dgSpecHash": "pM6jfhwx9GBRURCOfcbIOJxgRPTfnf0R2EnT/quvglb2HXjyGnW2QFy6sX7ZxwiTjDjpipdHGPQx2QFeQyX7Pg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Guilherme Turtera\\OneDrive\\Documentos\\EC5\\Linguagem de Programação\\N2B1\\CurriculumGenerator\\CurriculumGenerator\\CurriculumGenerator.csproj",
   "expectedPackageFiles": [
@@ -12,11 +12,19 @@
     "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\microsoft.codeanalysis.csharp\\3.8.0\\microsoft.codeanalysis.csharp.3.8.0.nupkg.sha512",
     "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\microsoft.codeanalysis.razor\\5.0.14\\microsoft.codeanalysis.razor.5.0.14.nupkg.sha512",
     "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\microsoft.extensions.dependencymodel\\5.0.0\\microsoft.extensions.dependencymodel.5.0.0.nupkg.sha512",
-    "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
+    "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
     "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\system.reflection.metadata\\5.0.0\\system.reflection.metadata.5.0.0.nupkg.sha512",
     "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
+    "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
     "C:\\Users\\Guilherme Turtera\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],

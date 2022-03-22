@@ -39,68 +39,72 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Nome</label>
-                        <input type="text" value="@Model.Nome" name="Nome" class="form-control" placeholder="Guilherme Turtera" required>
+                        <input type="text" value="@Model.Pessoa.Nome" name="Pessoa.Nome" class="form-control" placeholder="Guilherme Turtera" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label>Email</label>
-                        <input type="email" value="@Model.Email" name="Email" class="form-control" placeholder="guilhermeturtera@outlook.com">
+                        <input type="email" value="@Model.Pessoa.Email" name="Pessoa.Email" class="form-control" placeholder="guilhermeturtera@outlook.com">
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Endereço</label>
-                    <input type="text" value="@Model.Endereco" name="Endereco" class="form-control" placeholder="Rua dos Bobos, nº 0">
+                    <input type="text" value="@Model.Pessoa.Endereco" name="Pessoa.Endereco" class="form-control" placeholder="Rua dos Bobos, nº 0">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Telefone</label>
-                        <input type="tel" value="@Model.Telefone" name="Telefone" class="form-control" placeholder="(11) 98741-0155">
+                        <input type="tel" value="@Model.Pessoa.Telefone" name="Pessoa.Telefone" class="form-control" placeholder="(11) 98741-0155">
                     </div>
                     <div class="form-group col-md-6">
                         <label>CPF (sem . e -)</label>
-                        <input type="text" value="@Model.CPF" name="CPF" class="form-control" placeholder="12345678900" required><!-- maxlength="11" minlength="11"-->
+                        <input type="text" value="@Model.Pessoa.CPF" name="Pessoa.CPF" class="form-control" placeholder="12345678900" required><!-- maxlength="11" minlength="11"-->
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Pretensão Salarial (R$)</label>
-                        <input type="number" value="@Model.PretensaoSalarial" name="PretensaoSalarial" class="form-control" placeholder="2000.00">
+                        <input type="number" value="@Model.Pessoa.PretensaoSalarial" name="Pessoa.PretensaoSalarial" class="form-control" placeholder="2000.00">
                     </div>
                     <div class="form-group col-md-6">
                         <label>Cargo Pretendido</label>
-                        <input type="text" value="@Model.CargoPretendido" name="CargoPretendido" class="form-control" placeholder="Administrador de Contas">
+                        <input type="text" value="@Model.Pessoa.CargoPretendido" name="Pessoa.CargoPretendido" class="form-control" placeholder="Administrador de Contas">
                     </div>
                 </div>
             </form>
         </div>
         <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
             <h3>Experiência Profissional</h3>
-            <form class="g-3 needs-validation" id="professional-experience-form" novalidate>
-                @for (int i = 0; i < Model.ExperienciasProfissionais.Count; i++)
-                {
-                    <h4>Cargo @(i + 1)</h4>
+            <form class="g-3 needs-validation" style="height: auto; clear: both" id="professional-experience-form" novalidate>
+                <div id="professsional-to-append" style="height: auto; clear: both;">
+                    @for (int i = 0; i < Model.ExperienciasProfissionais.Count; i++)
+                    {
+                        <div>
+                            <h4>Cargo @(i + 1)</h4>
 
-                    <div class="form-group">
-                        <label>Cargo</label>
-                        <input type="text" class="form-control" placeholder="Analista Júnior" name="ExperienciasProfissionais[@i].Cargo" value="@(Model.ExperienciasProfissionais[i].Cargo)" required>
-                    </div>
+                            <div class="form-group">
+                                <label>Cargo</label>
+                                <input type="text" class="form-control" placeholder="Analista Júnior" name="ExperienciasProfissionais[@i].Cargo" value="@(Model.ExperienciasProfissionais[i].Cargo)" required>
+                            </div>
 
-                    <div class="form-group">
-                        <label>Descrição</label>
-                        <textarea class="form-control" placeholder="Aprendi como se escreve um código limpo..." name="ExperienciasProfissionais[@i].Descricao" required>@(Model.ExperienciasProfissionais[i].Descricao)</textarea>
-                    </div>
+                            <div class="form-group">
+                                <label>Descrição</label>
+                                <textarea class="form-control" placeholder="Aprendi como se escreve um código limpo..." name="ExperienciasProfissionais[@i].Descricao" required>@(Model.ExperienciasProfissionais[i].Descricao)</textarea>
+                            </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Data de Início</label>
-                            <input type="datetime" class="form-control" value="@(Model.ExperienciasProfissionais[i].DataInicio)" name="ExperienciasProfissionais[@i].DataInicio" required>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Data de Início</label>
+                                    <input type="datetime" class="form-control" value="@(Model.ExperienciasProfissionais[i].DataInicio)" name="ExperienciasProfissionais[@i].DataInicio" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Data de Término</label>
+                                    <input type="datetime" class="form-control" value="@(Model.ExperienciasProfissionais[i].DataFinal)" name="ExperienciasProfissionais[@i].DataFinal" placeholder="Administrador de Contas">
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label>Data de Término</label>
-                            <input type="datetime" class="form-control" value="@(Model.ExperienciasProfissionais[i].DataFinal)" name="ExperienciasProfissionais[@i].DataFinal" placeholder="Administrador de Contas">
-                        </div>
-                    </div>
-                    <br>
-                }
+                    }
+                </div>
+                <input type="button" id="add-professional-experience" value="+" />
             </form>
         </div>
         <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
@@ -108,25 +112,27 @@
             <form class="g-3 needs-validation" id="academic-experience-form" novalidate>
                 @for (int i = 0; i < Model.ExperienciasAcademicas.Count; i++)
                 {
-                    <h4>Curso @(i + 1)</h4>
-                    <div class="form-group">
-                        <label>Curso</label>
-                        <input type="text" value="@(Model.ExperienciasAcademicas[i].Curso)" name="ExperienciasAcademicas[@i].Curso" class="form-control" placeholder="Desenvolvimento Front End" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Descrição</label>
-                        <textarea class="form-control" name="ExperienciasAcademicas[@i].Descricao" placeholder="Aprendi como se escreve um código limpo..." required>@(Model.ExperienciasAcademicas[i].Descricao)</textarea>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Data de Início</label>
-                            <input type="datetime" value="@(Model.ExperienciasAcademicas[i].DataInicio)" class="form-control" name="ExperienciasAcademicas[@i].DataInicio" required>
+                    <div>
+                        <h4>Curso @(i + 1)</h4>
+                        <div class="form-group">
+                            <label>Curso</label>
+                            <input type="text" value="@(Model.ExperienciasAcademicas[i].Curso)" name="ExperienciasAcademicas[@i].Curso" class="form-control" placeholder="Desenvolvimento Front End" required>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label>Data de Término</label>
-                            <input type="datetime" value="@(Model.ExperienciasAcademicas[i].DataFinal)" class="form-control" name="ExperienciasAcademicas[@i].DataFinal" placeholder="Administrador de Contas">
+
+                        <div class="form-group">
+                            <label>Descrição</label>
+                            <textarea class="form-control" name="ExperienciasAcademicas[@i].Descricao" placeholder="Aprendi como se escreve um código limpo..." required>@(Model.ExperienciasAcademicas[i].Descricao)</textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Data de Início</label>
+                                <input type="datetime" value="@(Model.ExperienciasAcademicas[i].DataInicio)" class="form-control" name="ExperienciasAcademicas[@i].DataInicio" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Data de Término</label>
+                                <input type="datetime" value="@(Model.ExperienciasAcademicas[i].DataFinal)" class="form-control" name="ExperienciasAcademicas[@i].DataFinal" placeholder="Administrador de Contas">
+                            </div>
                         </div>
                     </div>
                 }
@@ -178,7 +184,7 @@
             errorSteps,
             anchorSettings: {
                 markAllPreviousStepsAsDone: false
-            }
+            }, autoAdjustHeight: true
         });
     });
 
@@ -194,6 +200,35 @@
         });
         return false;
     });
+
+    $('#add-professional-experience').click(function () {
+        let index = 2
+        var structure = $(`<div>
+                            <h4>Cargo 3</h4>
+
+                            <div class="form-group">
+                                <label>Cargo</label>
+                                <input type="text" class="form-control" placeholder="Analista Júnior" name="ExperienciasProfissionais[2].Cargo" value="" required="">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Descrição</label>
+                                <textarea class="form-control" placeholder="Aprendi como se escreve um código limpo..." name="ExperienciasProfissionais[2].Descricao" required=""></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Data de Início</label>
+                                    <input type="datetime" class="form-control" value="01/01/0001 00:00:00" name="ExperienciasProfissionais[2].DataInicio" required="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Data de Término</label>
+                                    <input type="datetime" class="form-control" value="01/01/0001 00:00:00" name="ExperienciasProfissionais[2].DataFinal" placeholder="Administrador de Contas">
+                                </div>
+                            </div>
+                        </div>`);
+        $('#professsional-to-append').append(structure);
+    })
 
     $("#smartwizard").on("leaveStep", function (e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
         let validForm = validateForm(currentStepIndex)
