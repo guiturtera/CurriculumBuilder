@@ -1,4 +1,4 @@
-﻿@model CurriculoViewModel 
+﻿@model CurriculoViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -28,6 +28,11 @@
         <li class="nav-item">
             <a class="nav-link " href="#step-4">
                 <strong>Passso 4</strong> <br> Idiomas
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="#step-5">
+                <strong>Passso 5</strong> <br> Finalização
             </a>
         </li>
     </ul>
@@ -104,7 +109,6 @@
                         </div>
                     }
                 </div>
-                <input type="button" id="add-professional-experience" value="+" />
             </form>
         </div>
         <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
@@ -155,8 +159,14 @@
                     </div>
                 }
             </form>
+        </div>
+        <div id="step-5" class="tab-pane" role="tabpanel" aria-labelledby="step-5">
+            <h3>Finalização</h3>
+
             <form id="form-appender">
-                <input type="submit"/>
+                <div class="text-center">
+                    <input type="submit" class="btn btn-lg btn-success" value="Cadastrar ou atualizar currículo" />
+                </div>
             </form>
         </div>
     </div>
@@ -191,11 +201,11 @@
     $("#form-appender").submit(function () {
         console.log('aaaa')
         $.ajax({
-            url: '@Url.Action("InsereNovoCurriculo", "Home")',
+            url: '@Url.Action("InsereNovoCurriculo", "EditorDeCurriculos")',
             type: 'POST',
             data: $('#client-form, #professional-experience-form, #academic-experience-form, #language-experience').serialize(),
-            success: function () {
-             console.log("success")
+            complete: function (res) {
+                alert(res.responseText)
             }
         });
         return false;

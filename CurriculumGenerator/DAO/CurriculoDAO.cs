@@ -83,9 +83,9 @@ namespace CurriculumGenerator.DAO
         {
             string sql = "update curriculo set " +
                     "nome = @nome, endereco = @endereco, telefone = @telefone, email = @email, pretensaoSalarial = @pretensaoSalarial, cargoPretendido = @cargoPretendido, " +
-                    "experienciaProfissional1 = @experienciaProfissional1, experienciaProfissional2 = @experienciaProfissional2, experienciaProfissional3 = @experienciaProfissional3, experienciaProfissional4 = @experienciaProfissional4, experienciaProfissional5 = @experienciaProfissional5" +
-                    "experienciaAcademica1 = @experienciaAcademica1, experienciaAcademica2 = @experienciaAcademica2, experienciaAcademica3 = @experienciaAcademica3" +
-                    "idioma1 = @idioma1, idioma2 = @idioma2, idioma3 = @idioma3" +
+                    "experienciaProfissional1 = @experienciaProfissional1, experienciaProfissional2 = @experienciaProfissional2, experienciaProfissional3 = @experienciaProfissional3, experienciaProfissional4 = @experienciaProfissional4, experienciaProfissional5 = @experienciaProfissional5, " +
+                    "experienciaAcademica1 = @experienciaAcademica1, experienciaAcademica2 = @experienciaAcademica2, experienciaAcademica3 = @experienciaAcademica3, " +
+                    "idioma1 = @idioma1, idioma2 = @idioma2, idioma3 = @idioma3 " +
                     "where CPF = @CPF";
             HelperDAO.ExecutaSQL(sql, CriaParametros(curriculo));
         }

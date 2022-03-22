@@ -340,8 +340,6 @@ C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2
 C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\obj\Debug\net5.0\CurriculumGenerator.TagHelpers.input.cache
 C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\obj\Debug\net5.0\CurriculumGenerator.TagHelpers.output.cache
 C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\obj\Debug\net5.0\CurriculumGenerator.RazorCoreGenerate.cache
-C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -361,3 +359,5 @@ C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2
 C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
 C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\obj\Debug\net5.0\Razor\Views\EditorDeCurriculos\Index.cshtml.g.cs
+C:\Users\Guilherme Turtera\OneDrive\Documentos\EC5\Linguagem de Programação\N2B1\CurriculumGenerator\CurriculumGenerator\obj\Debug\net5.0\Razor\Views\ConsultaCurriculos\Index.cshtml.g.cs
