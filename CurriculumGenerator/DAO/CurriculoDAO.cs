@@ -90,11 +90,11 @@ namespace CurriculumGenerator.DAO
             HelperDAO.ExecutaSQL(sql, CriaParametros(curriculo));
         }
 
-        public CurriculoViewModel Get(string cpf)
+        public CurriculoDBViewModel Get(string cpf)
         {
             using (SqlConnection cx = ConexaoBD.GetConexao())
             {
-                string sql = "select * from curriculo where CPF = " + cpf;
+                string sql = "select * from curriculo where CPF = '" + cpf + "'";
                 using (SqlDataAdapter adapter = new SqlDataAdapter(sql, cx))
                 {
                     DataTable tabela = new DataTable(); adapter.Fill(tabela);
@@ -111,9 +111,9 @@ namespace CurriculumGenerator.DAO
             }
         }
 
-        private CurriculoViewModel MontaModel(DataRow registro)
+        private CurriculoDBViewModel MontaModel(DataRow registro)
         {
-            CurriculoViewModel curriculo = new CurriculoViewModel();
+            CurriculoDBViewModel curriculo = new CurriculoDBViewModel();
             curriculo.Pessoa = new PessoaViewModel();
 
             curriculo.Pessoa.Nome = registro["nome"].ToString();
@@ -125,6 +125,20 @@ namespace CurriculumGenerator.DAO
             if (registro["pretensaoSalarial"].ToString() != "")
                 curriculo.Pessoa.PretensaoSalarial = double.Parse(registro["pretensaoSalarial"].ToString());
 
+            curriculo.ExperienciaProfissional1 = registro["experienciaProfissional1"].ToString();
+            curriculo.ExperienciaProfissional2 = registro["experienciaProfissional2"].ToString();
+            curriculo.ExperienciaProfissional3 = registro["experienciaProfissional3"].ToString();
+            curriculo.ExperienciaProfissional4 = registro["experienciaProfissional4"].ToString();
+            curriculo.ExperienciaProfissional5 = registro["experienciaProfissional5"].ToString();
+
+            curriculo.ExperienciaAcademica1 = registro["experienciaAcademica1"].ToString();
+            curriculo.ExperienciaAcademica2 = registro["experienciaAcademica2"].ToString();
+            curriculo.ExperienciaAcademica3 = registro["experienciaAcademica3"].ToString();
+
+            curriculo.Idioma1 = registro["idioma1"].ToString();
+            curriculo.Idioma2 = registro["idioma2"].ToString();
+            curriculo.Idioma3 = registro["idioma3"].ToString();
+
             return curriculo;
         }
 
@@ -132,7 +146,7 @@ namespace CurriculumGenerator.DAO
         {
             CurriculoDAO curriculoDAO = new CurriculoDAO();
 
-            CurriculoViewModel pesssoaExistente = Get(curriculo.Pessoa.CPF);
+            CurriculoDBViewModel pesssoaExistente = Get(curriculo.Pessoa.CPF);
             if (pesssoaExistente != null)
             {
                 curriculoDAO.Update(curriculo);

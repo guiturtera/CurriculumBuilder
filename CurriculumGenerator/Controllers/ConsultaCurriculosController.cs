@@ -21,7 +21,18 @@ namespace CurriculumGenerator.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new CurriculoResponseModel(true, ""));
+        }
+
+        public IActionResult ProcuraCurriculo(string CPF)
+        {
+            CurriculoDAO curriculoDAO = new CurriculoDAO();
+            CurriculoDBViewModel curriculoViewModel = curriculoDAO.Get(CPF);
+
+            if (curriculoViewModel == null)
+                return View("Index", new CurriculoResponseModel(false, CPF, "CPF não encontrado!"));
+
+            return View("Index", new CurriculoResponseModel(true, CPF, "", curriculoViewModel));
         }
     }
 }

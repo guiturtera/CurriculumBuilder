@@ -1,10 +1,59 @@
-﻿@model CurriculoViewModel 
+﻿@model CurriculoResponseModel
+@using System.Net
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <form asp-action="ConsultaCurriculo">
-        
+    <form asp-action="ProcuraCurriculo">
+        <div class="form-group">
+            <h2>CPF para consulta (sem . e -)</h2>
+            <input type="text" name="CPF" class="form-control mt-5" value="@Model.CpfProcurado" placeholder="12345678900" required>
+            <input type="submit" class="btn btn-info mt-5" value="Procurar currículo">
+        </div>
     </form>
+
+    @if (!Model.Success)
+    {
+        <h2 class="mt-5" style="color: red;">@(Model.ErrorMessage)</h2>
+    }
+    @if (Model.Curriculo != null)
+    {
+        <div class="mt-5 shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="col-md-10 mx-auto">
+                <div class="text-center">
+                    <h1 class="text-center mb-5">Dados gerais</h1>
+                    <h4 class="my-3">Nome: @Model.Curriculo.Pessoa.Nome</h4>
+                    <h4 class="my-3">CPF: @Model.Curriculo.Pessoa.CPF</h4>
+                    <h4 class="my-3">Endereço: @Model.Curriculo.Pessoa.Endereco</h4>
+                    <h4 class="my-3">Telefone: @Model.Curriculo.Pessoa.Telefone</h4>
+                    <h4 class="my-3">Email: @Model.Curriculo.Pessoa.Email</h4>
+                    <h4 class="my-3">Pretensão Salarial: @Model.Curriculo.Pessoa.PretensaoSalarial</h4>
+                    <h4 class="mt-3 mb-5">Cargo Pretendido: @Model.Curriculo.Pessoa.CargoPretendido</h4>
+                </div>
+                <hr />
+
+                <h1 class="mb-5">Experiências Profissionais</h1>
+                @Html.Raw(@WebUtility.HtmlDecode(string.IsNullOrEmpty(Model.Curriculo.ExperienciaProfissional1) ? "" : $"<h3 classs='mb-3'>Experiência 1:</h3><p class='fs-2'>{Model.Curriculo.ExperienciaProfissional1}</p>".Replace(Environment.NewLine, "<br/>")))
+                @Html.Raw(@WebUtility.HtmlDecode(string.IsNullOrEmpty(Model.Curriculo.ExperienciaProfissional2) ? "" : $"<h3 classs='mb-3'>Experiência 2:</h3><p class='fs-2'>{Model.Curriculo.ExperienciaProfissional2}</p>".Replace(Environment.NewLine, "<br/>")))
+                @Html.Raw(@WebUtility.HtmlDecode(string.IsNullOrEmpty(Model.Curriculo.ExperienciaProfissional3) ? "" : $"<h3 classs='mb-3'>Experiência 3:</h3><p class='fs-2'>{Model.Curriculo.ExperienciaProfissional3}</p>".Replace(Environment.NewLine, "<br/>")))
+                @Html.Raw(@WebUtility.HtmlDecode(string.IsNullOrEmpty(Model.Curriculo.ExperienciaProfissional4) ? "" : $"<h3 classs='mb-3'>Experiência 4:</h3><p class='fs-2'>{Model.Curriculo.ExperienciaProfissional4}</p>".Replace(Environment.NewLine, "<br/>")))
+                @Html.Raw(@WebUtility.HtmlDecode(string.IsNullOrEmpty(Model.Curriculo.ExperienciaProfissional5) ? "" : $"<h3 classs='mb-5'>Experiência 5:</h3><p class='fs-2'>{Model.Curriculo.ExperienciaProfissional5}</p>".Replace(Environment.NewLine, "<br/>")))
+                <hr />
+
+                <h1>Experiências Acadêmicas</h1>
+                @Html.Raw(@WebUtility.HtmlDecode(string.IsNullOrEmpty(Model.Curriculo.ExperienciaAcademica1) ? "" : $"<h3 classs='mb-3'>Experiência 1:</h3><p class='fs-2'>{Model.Curriculo.ExperienciaAcademica1}</p>".Replace(Environment.NewLine, "<br/>")))
+                @Html.Raw(@WebUtility.HtmlDecode(string.IsNullOrEmpty(Model.Curriculo.ExperienciaAcademica2) ? "" : $"<h3 classs='mb-3'>Experiência 2:</h3><p class='fs-2'>{Model.Curriculo.ExperienciaAcademica2}</p>".Replace(Environment.NewLine, "<br/>")))
+                @Html.Raw(@WebUtility.HtmlDecode(string.IsNullOrEmpty(Model.Curriculo.ExperienciaAcademica3) ? "" : $"<h3 classs='mb-5'>Experiência 3:</h3><p class='fs-2'>{Model.Curriculo.ExperienciaAcademica3}</p>".Replace(Environment.NewLine, "<br/>")))
+                <hr />
+
+                <h1>Experiências Acadêmicas</h1>
+                @Html.Raw(@WebUtility.HtmlDecode(string.IsNullOrEmpty(Model.Curriculo.Idioma1) ? "" : $"<h3 classs='mb-5'>Idioma 1:</h3><p class='fs-2'>{Model.Curriculo.Idioma1}</p>".Replace(Environment.NewLine, "<br/>")))
+                @Html.Raw(@WebUtility.HtmlDecode(string.IsNullOrEmpty(Model.Curriculo.Idioma2) ? "" : $"<h3 classs='mb-5'>Idioma 2:</h3><p class='fs-2'>{Model.Curriculo.Idioma2}</p>".Replace(Environment.NewLine, "<br/>")))
+                @Html.Raw(@WebUtility.HtmlDecode(string.IsNullOrEmpty(Model.Curriculo.Idioma3) ? "" : $"<h3 classs='mb-5'>Idioma 3:</h3><p class='fs-2'>{Model.Curriculo.Idioma3}</p>".Replace(Environment.NewLine, "<br/>")))
+            </div>
+        </div>
+    }
+
 </div>
