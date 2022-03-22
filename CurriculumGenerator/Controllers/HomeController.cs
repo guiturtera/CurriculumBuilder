@@ -43,15 +43,11 @@ namespace CurriculumGenerator.Controllers
                 {
                     new ExperienciasProfissionaisViewModel { Cargo = "Analista Júnior", Descricao = "Analista júnior", DataInicio = DateTime.Now, DataFinal = DateTime.MaxValue },
                     new ExperienciasProfissionaisViewModel { Cargo = "Analista Júnior 2", Descricao = "Analista pleno", DataInicio = DateTime.Now, DataFinal = DateTime.MaxValue },
-                    //new ExperienciasProfissionaisViewModel { Cargo = "", Descricao = "" },
                 },
                 ExperienciasAcademicas = new List<ExperienciasAcademicasViewModel>()
                 {
                     new ExperienciasAcademicasViewModel { Curso = "Desenvolvimento front end", Descricao = "Desenvolvimento front end", DataInicio = DateTime.Now, DataFinal = DateTime.MaxValue },
                     new ExperienciasAcademicasViewModel { Curso = "Desenvolvimento back end", Descricao = "Desenvolvimento back end", DataInicio = DateTime.Now, DataFinal = DateTime.MaxValue },
-                    //new ExperienciasAcademicasViewModel { Curso = "", Descricao = ""},
-                    //new ExperienciasAcademicasViewModel { Curso = "", Descricao = ""},
-                    //new ExperienciasAcademicasViewModel { Curso = "", Descricao = ""},
                 }
             });
         }
@@ -61,13 +57,12 @@ namespace CurriculumGenerator.Controllers
             return View();
         }
 
-
         public IActionResult InsereNovoCurriculo(CurriculoViewModel curriculo)
         {
             CurriculoDAO curriculoDAO = new CurriculoDAO();
             curriculoDAO.InsereOuAtualiza(curriculo);
 
-            return View();
+            return View("Home");
         }
 
 
